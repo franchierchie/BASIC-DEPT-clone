@@ -32,10 +32,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        <div className="noise-texture-bg"></div>
-
         <NavBar />
 
+        <div className="noise-texture-bg"></div>
         {children}
       </body>
     </html>

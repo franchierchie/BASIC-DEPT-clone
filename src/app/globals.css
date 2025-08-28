@@ -42,6 +42,8 @@ body {
   }
 }
 
+
+
 @keyframes noise-animation {
   0% {
     transform: translate3d(0, 9rem, 0);

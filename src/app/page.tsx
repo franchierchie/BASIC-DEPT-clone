@@ -1,14 +1,64 @@
 import Image from "next/image";
 
+import { AwardCard } from "@/components";
+
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <main className="">
-        <header>
-        </header>
+      <main>
+        <section
+          className="relative w-full h-screen bg-foreground overflow-hidden"
+        >
+          {/* Background video */}
+          <video
+            src="/main.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div className="relative flex flex-col gap-2 items-center justify-center h-full text-center font-bold pointer-events-none z-10">
+            <p
+              className="flex items-center justify-center uppercase leading-5 w-fit h-auto p-10 bg-background text-foreground rounded-full shadow-2xl"
+              style={{ aspectRatio: 1/1 }}
+            >
+              Watch <br /> Reel
+            </p>
+            <div className="text-background">
+              <p>BASIC/DEPT®</p>
+              <p>2010-∞</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-22">
+          <div className="flex justify-center items-baseline gap-60 py-75 max-w-7xl mx-auto">
+            <AwardCard
+              awardText={(<>Design and Branding <br /> Agency of the Year</>)}
+              brandLogo="/logos/adage-logo.svg"
+            />
+
+            <AwardCard
+              awardText="Agency of the Year"
+              brandLogo="/logos/the-webby-awards-logo.svg"
+            />
+
+            <AwardCard
+              awardText={(<>Digital Innovation Agency <br /> of the Year Finalist</>)}
+              brandLogo="/logos/us-campaign-logo.svg"
+            />
+          </div>
+
+          <div className="h-[1px] w-full bg-foreground" />
+        </section>
+
+        <section className="max-w-4xl mx-auto py-50">
+        </section>
       </main>
 
-      <footer className="">
+      <footer>
       </footer>
     </div>
   );
