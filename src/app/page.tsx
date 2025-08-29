@@ -33,10 +33,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-22">
-          <div className="flex justify-center items-baseline gap-60 py-75 max-w-7xl mx-auto">
+        <section className="px-5 sm:px-10">
+          <div className="grid grid-cols-3 auto-rows-min justify-items-center gap-1 pt-12 pb-24 sm:pt-15 sm:pb-28">
             <AwardCard
-              awardText={(<>Design and Branding <br /> Agency of the Year</>)}
+              awardText="Design and Branding Agency of the Year"
               brandLogo="/logos/adage-logo.svg"
             />
 
@@ -46,7 +46,7 @@ export default function Home() {
             />
 
             <AwardCard
-              awardText={(<>Digital Innovation Agency <br /> of the Year Finalist</>)}
+              awardText="Digital Innovation Agency of the Year Finalist"
               brandLogo="/logos/us-campaign-logo.svg"
             />
           </div>

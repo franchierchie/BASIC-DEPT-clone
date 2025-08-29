@@ -8,22 +8,22 @@ interface Props {
 
 export const AwardCard = ({ awardText = 'Award Text', brandLogo = '' }: Props) => {
   return (
-    <div className="group flex flex-col justify-center items-center gap-10">
-      <div className="w-100 h-auto flex justify-center items-center">
+    <div className="lg:w-3xs group grid auto-rows-min items-center gap-2 sm:gap-0">
+      <div className="relative size-25 sm:size-33 lg:size-40 flex items-center mx-auto">
         <Image
           src={ brandLogo }
-          alt="AdAge logo"
-          width={ 250 }
-          height={ 100 }
-          // fill
-          style={{ objectFit: 'contain' }}
-          className="group-hover:scale-105 transition-all duration-300"
+          alt="Award logo"
+          fill
+          className="object-contain group-hover:scale-105 transition-all duration-300"
+          loading="lazy"
         />
       </div>
 
-      <p
-        className="uppercase text-md tracking-tighter font-bold text-center text-foreground/75 selection:bg-foreground/75 selection:text-background group-hover:underline"
-      >{ awardText }</p>
+      <div className="text-center self-start justify-stretch">
+        <p
+          className="w-full uppercase text-[.65rem] lg:text-md tracking-tighter font-bold text-foreground/75 selection:bg-foreground/75 selection:text-background group-hover:underline group-hover:decoration-3 group-hover:underline-offset-[1px]"
+        >{ awardText }</p>
+      </div>
     </div>
   )
 }
