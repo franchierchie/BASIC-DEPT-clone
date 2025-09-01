@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { AwardCard } from "@/components";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -33,8 +34,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-5 sm:px-10">
-          <div className="grid grid-cols-3 auto-rows-min justify-items-center gap-1 pt-12 pb-24 sm:pt-15 sm:pb-28">
+        <section className="px-7 sm:px-10">
+          <div className="grid grid-cols-3 auto-rows-min justify-items-center gap-1 pt-12 pb-24 sm:pt-15 sm:pb-28 md:py-25 lg:py-35 xl:py-65">
             <AwardCard
               awardText="Design and Branding Agency of the Year"
               brandLogo="/logos/adage-logo.svg"
@@ -54,7 +55,31 @@ export default function Home() {
           <div className="h-[1px] w-full bg-foreground" />
         </section>
 
-        <section className="max-w-4xl mx-auto py-50">
+        <section className="max-w-4xl px-7 sm:px-10 py-15">
+          <div>
+            <p
+              className="font-semibold text-xl/6 max-w-md text-balance"
+            >BASIC/DEPT® is a global branding and digital design agency building products, services, and eCommerce experiences that turn cultural values into company value.</p>
+
+            <Link
+              href="/"
+              className="mt-10 block uppercase text-xs font-bold border-1 border-foreground rounded-full w-fit px-7 py-2"
+            >
+              See the work
+            </Link>
+          </div>
+
+          <div className="flex justify-end items-center">
+            <div className="relative mt-15 w-55 h-20">
+              <Image
+                src="/logos/basic-dept-small-logo.svg"
+                alt="BASIC/DEPT logo"
+                fill
+                className="object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </section>
       </main>
 
