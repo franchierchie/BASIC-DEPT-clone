@@ -28,14 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <NavBar />
 
-        <div className="noise-texture-bg"></div>
-        {children}
+        <div className="z-0">
+          <div className="noise-texture-bg"></div>
+          {children}
+        </div>
       </body>
     </html>
   );

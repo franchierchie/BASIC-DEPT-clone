@@ -1,18 +1,41 @@
+'use client';
+
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs"
 
 export const NavBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // When the scroll passes 100px, set scrolled to true
+      setScrolled(window.scrollY > window.innerHeight - 80);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+    
+  }, []);
+
   return (
-    <nav className="w-full fixed text-background">
-      <div className="flex items-center justify-between py-14 px-22">
-        <div className="min-w-fit"> {/* LOGO */}
+    <nav
+      className={`w-full fixed top-0 z-50 transition-colors duration-300 ${
+        scrolled ? 'bg-background text-foreground noise-texture-bg-navbar' : 'bg-transparent text-background'
+      }`}
+    >
+      <div className="flex items-center justify-between px-7 py-6 md:px-10 md:py-8 lg:px-14 lg:py-7 xl:px-22 xl:py-12">
+        <div className="relative w-33 h-6 lg:w-42 lg:h-12 xl:w-45"> {/* LOGO */}
           <Image
             src="/logos/basic-dept-logo.svg"
             alt="BASIC/DEPT logo"
-            width={ 500 }
-            height={ 500 }
-            className="w-45 h-auto object-contain invert"
+            fill
+            // className="object-contain invert scheme-light-dark"
+            className={`object-contain invert scheme-light-dark ${
+              scrolled ? 'invert-0' : 'invert'
+            }`}
             unoptimized
           />
         </div>
@@ -33,7 +56,7 @@ export const NavBar = () => {
             <BsThreeDots size={ 30 } />
           </div>
           <div className="block 2xl:hidden">
-            <p className="uppercase font-bold text-lg">Menu</p>
+            <p className="uppercase font-bold text-base lg:text-lg">Menu</p>
           </div>
         </button>
       </div>
