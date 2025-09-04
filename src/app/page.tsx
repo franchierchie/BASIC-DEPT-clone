@@ -7,9 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <main>
-        <section
-          className="relative w-full h-screen bg-foreground overflow-hidden"
-        >
+        <section className="relative w-full h-screen bg-foreground overflow-hidden">
           {/* Background video */}
           <video
             src="/main.mp4"
@@ -34,8 +32,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-9 sm:px-10">
-          <div className="grid grid-cols-3 auto-rows-min justify-items-center gap-1 pt-12 pb-24 sm:pt-15 sm:pb-28 md:py-25 lg:py-35 xl:py-65">
+        <section className="px-7 sm:px-10 lg:px-14 xl:px-20">
+          <div className="grid grid-cols-3 auto-rows-min justify-items-center gap-1 mb-5 py-12 sm:py-15 md:py-25 lg:py-35 xl:py-65">
             <AwardCard
               awardText="Design and Branding Agency of the Year"
               brandLogo="/logos/adage-logo.svg"
@@ -55,11 +53,11 @@ export default function Home() {
           <div className="h-[1px] w-full bg-foreground" />
         </section>
 
-        <section className="max-w-4xl py-15">
-          <div className="px-9 sm:px-10">
+        <section className="py-15">
+          <div className="flex flex-wrap justify-between items-center gap-10 px-7 sm:px-10 lg:px-14 xl:px-20">
             <div>
               <p
-                className="font-semibold text-xl/6 max-w-md text-balance"
+                className="text-xl/5.5 xl:text-4xl/10 max-w-sm sm:max-w-lg xl:max-w-4xl text-balance"
               >BASIC/DEPT® is a global branding and digital design agency building products, services, and eCommerce experiences that turn cultural values into company value.</p>
 
               <Link
@@ -70,20 +68,18 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="flex justify-end items-center">
-              <div className="relative mt-15 w-90 h-30">
-                <Image
-                  src="/logos/basic-dept-small-logo.svg"
-                  alt="BASIC/DEPT logo"
-                  fill
-                  className="object-contain"
-                  loading="lazy"
-                />
-              </div>
+            <div className="relative w-60 sm:w-80 md:w-100 lg:w-130 xl:w-180 aspect-[21/9] ml-auto mb-3">
+              <Image
+                src="/logos/basic-dept-small-logo.svg"
+                alt="BASIC/DEPT logo"
+                fill
+                className="object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
 
-          <div className="mt-7 pl-9 py-1 flex gap-5 overflow-x-scroll">
+          <div className="xl:mt-30 pl-7 sm:pl-10 lg:pl-14 py-1 flex gap-5 overflow-x-scroll xl:overflow-auto">
             <BrandCardWithImage
               title="Patagonia"
               description="An eCommerce experience driven by Patagonia’s brand mission"
@@ -108,23 +104,27 @@ export default function Home() {
                 className="object-contain scale-115"
                 loading="lazy"
               />
-                  </BrandCardWithImage>
+            </BrandCardWithImage>
 
             <BrandCardWithImage
               title="Google Store"
               description="An eCommerce experience helping Google bring its hardware to people across the globe"
             >
-              <div className="relative w-full aspect-[4/5]">
-                <video
-                  src="/works/google.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-13 inset-x-0 w-full object-contain scale-115"
-                />
-              </div>
+              <video
+                src="/works/google.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-contain scale-115"
+              />
             </BrandCardWithImage>
+          </div>
+
+          <div className="px-7 sm:px-10 lg:px-14 xl:px-20 mt-20 lg:mt-35">
+            {/* <div className="h-[1px] max-w-screen bg-foreground" /> */}
+            <div className="h-[1px] w-full bg-foreground" />
+
           </div>
         </section>
       </main>
