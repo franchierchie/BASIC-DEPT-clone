@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Inter } from "next/font/google";
 
 import { NavBar } from "@/components";
 
@@ -11,7 +11,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: 'swap',
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${inter.variable} ${hankenGrotesk.variable} antialiased`}
       >
         <NavBar />
 
