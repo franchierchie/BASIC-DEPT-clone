@@ -17,6 +17,7 @@ export const FeaturedEngagementsCard = ({ logo = '', companyName = 'Name of the 
             src={ logo }
             alt={`${ logo }'s logo`}
             fill
+            sizes="(max-width: 767px) 80vw, (min-width: 768px) and (max-width: 1279px) 320px, 448px"
             className="object-contain object-left"
             />
         </div>
