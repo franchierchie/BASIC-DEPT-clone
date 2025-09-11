@@ -1,8 +1,19 @@
-import Link from "next/link"
+'use client';
 
-export const AboutUsSection = () => {
+import { RefObject } from "react";
+import Link from "next/link";
+
+interface Props {
+  sectionRef: RefObject<HTMLElement | null>;
+}
+
+export const AboutUsSection = ({ sectionRef }: Props) => {
+
   return (
-    <div className="h-[80dvh] px-7 sm:px-10 lg:px-14 xl:px-20 mb-15">
+    <section
+      ref={ sectionRef }
+      className="min-h-[80dvh] px-7 sm:px-10 lg:px-14 xl:px-20 pb-15 bg-background text-foreground"
+    >
       <div className="py-5">
         <div className="h-[1px] w-full bg-foreground mb-15" />
       </div>
@@ -19,12 +30,12 @@ export const AboutUsSection = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-5 basis-[45%]"> {/* Info - open */}
+        <div className="flex flex-col gap-5 basis-[45%] lg:basis-[95%] order-last md:order-first"> {/* Info - open */}
           <q
-            className="text-5xl/11 font-extrabold no-quotes uppercase"
+            className="text-5xl/11 lg:text-6xl xl:text-9xl font-extrabold no-quotes uppercase"
           >BASIC/DEPT® helps brands ● connect w/ culture</q>
 
-          <div className="flex flex-col gap-5 uppercase">
+          <div className="flex flex-col gap-5 xl:gap-15 uppercase">
             <p>Adweek <strong>Agency Spotlight</strong></p>
 
             <Link
@@ -36,6 +47,6 @@ export const AboutUsSection = () => {
           </div>
         </div> {/* Info - close */}
       </div>
-    </div>
+    </section>
   )
 }

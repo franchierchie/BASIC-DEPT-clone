@@ -13,7 +13,10 @@ export const NavBar = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 z-50 transition-all duration-300 ${ scrolled ? 'bg-background text-foreground noise-texture-bg-navbar' : 'bg-transparent text-background' } ${ ( scrollDirection === 'down' ) ? '-translate-y-full' : 'translate-y-0' }`}
+      className={`w-full fixed top-0 z-50 transition-all duration-300 
+        ${ scrolled ? 'bg-background text-foreground noise-texture-bg-navbar' : 'bg-transparent text-background' } 
+        ${ ( scrollDirection === 'down' ) ? '-translate-y-full' : 'translate-y-0' }
+      `}
     >
       <div className="flex items-center justify-between px-7 py-6 md:px-10 md:py-8 lg:px-14 lg:py-7 xl:px-22 xl:py-12">
         <div className="relative w-33 h-6 lg:w-42 lg:h-12 xl:w-45"> {/* LOGO */}
@@ -21,11 +24,11 @@ export const NavBar = () => {
             src="/logos/basic-dept-logo.svg"
             alt="BASIC/DEPT logo"
             fill
-            // className="object-contain invert scheme-light-dark"
             className={`object-contain invert scheme-light-dark ${
               scrolled ? 'invert-0' : 'invert'
             }`}
             unoptimized
+            priority
           />
         </div>
 
